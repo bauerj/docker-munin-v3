@@ -2,7 +2,7 @@ FROM phusion/baseimage:0.9.19
 MAINTAINER Johann Bauer "https://bauerj.eu"
 
 # Install dependencies
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && apt-get install -y wget tar gzip make perl rrdtool gcc librrds-perl libexpat1-dev unzip && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget tar gzip make perl rrdtool gcc librrds-perl libexpat1-dev unzip && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Perl dependencies
 RUN yes | cpan Module::Build
