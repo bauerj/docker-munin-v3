@@ -1,0 +1,1 @@
+*/5 * * * *     munin if [ -x /usr/local/bin/munin-cron ]; then /usr/local/bin/munin-cron; fi

@@ -1,0 +1,2 @@
+#!/bin/sh
+su munin -c munin-cron || /bin/true
