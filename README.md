@@ -1,3 +1,6 @@
+[![](https://images.microbadger.com/badges/image/bauerj/munin-v3.svg)](https://microbadger.com/images/bauerj/munin-v3 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/bauerj/munin-v3.svg)](https://microbadger.com/images/bauerj/munin-v3 "Get your own version badge on microbadger.com")
+
 # Munin v3 (master)
 
 Munin v3 is currently in _beta_ stage, use at your own risk. The protcol is compatible to Munin v2
@@ -39,7 +42,7 @@ Create a configuration file for munin, e.g (`/var/volumes/munin/conf/hosts.conf`
 If you use `docker-compose`:
 
       munin:
-        image: bauerj/munin-v3:0.3b3
+        image: bauerj/munin-v3:0.3b4
         ports:
           - "80:4948"
         volumes:
