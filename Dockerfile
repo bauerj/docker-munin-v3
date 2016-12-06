@@ -2,12 +2,12 @@ FROM phusion/baseimage:0.9.19
 MAINTAINER Johann Bauer "https://bauerj.eu"
 
 # Install dependencies
-RUN apt-get update && apt-get install -y wget tar gzip make perl rrdtool gcc librrds-perl libexpat1-dev unzip && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget tar libssl-dev gzip make perl rrdtool gcc librrds-perl libexpat1-dev unzip && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Perl dependencies
 RUN yes | cpan Module::Build
 # Install munin
-RUN cd /tmp && wget https://github.com/munin-monitoring/munin/archive/2.999.3.zip && unzip 2.999.3.zip && cd /tmp/munin-2.999.3 && perl Build.PL && ./Build installdeps && ./Build && ./Build install && cd && rm /tmp/munin-2.999.3 -r
+RUN cd /tmp && wget https://github.com/munin-monitoring/munin/archive/2.999.4.zip && unzip 2.999.4.zip && cd /tmp/munin-2.999.4 && perl Build.PL && ./Build installdeps && ./Build && ./Build install && cd && rm /tmp/munin-2.999.4 -r
 
 # Patch munin? See https://github.com/munin-monitoring/munin/issues/749
 RUN sed -i -e 's/push(@rrd_gfx, "VRULE:$lastupdated#999999:Last update:dashes=2,5\\\\l");/push(@rrd_gfx, "VRULE:$lastupdated#999999:Last update:dashes=2,5");/g' /usr/local/share/perl/5.22.1/Munin/Master/Graph.pm
