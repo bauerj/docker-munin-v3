@@ -3,7 +3,7 @@
 
 # Munin v3 (master)
 
-Munin v3 is currently in _beta_ stage, use at your own risk. The protcol is compatible to Munin v2
+Munin v3 is currently in _beta_ stage, use at your own risk. The protcol is compatible to Munin v1 and Munin v2
 nodes, so you don't have to update them.
 
 Munin v3 contains a built-in minimal webserver that generates graphs on-demand so it should use less resources
